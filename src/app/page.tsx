@@ -1,101 +1,45 @@
 import Image from "next/image";
+import MainImage from '@/../public/images/main.webp';
+import {shop} from "@/app/shared/consts/shop";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div className="font-bai-jamjuree text-[#fff] h-full">
+       <div className="max-w-[360px] bg-[#121423] w-full mx-auto sm:max-w-[100vw]">
+         <div className="sticky z-[10] p-[15px] w-full left-0 top-0 backdrop-blur-[5px] flex items-center justify-between pb-[15px] gap-[30px] sm:p-[4.167vw] sm:gap-[8.333vw] sm:pb-[4.167vw]">
+           <div className="flex items-center gap-[8px] sm:gap-[2.222vw] ">
+             <div className="relative shadow-custom-purple overflow-hidden w-[32px] h-[32px] rounded-[8px] sm:w-[8.889vw] sm:h-[8.889vw] sm:rounded-[2.222vw]">
+               <Image
+                 fill
+                 src={MainImage.src}
+                 className="object-cover"
+                 alt="image"
+               />
+             </div>
+             <p className="font-medium text-[12px] sm:text-[3.333vw]">
+               Get the AiGo and snag your girl today!
+             </p>
+           </div>
+           <Link className="bg-button-gradient shadow-custom-purple font-bold text-[12px] text-[#fff] px-[12px] py-[4px] rounded-[12px] sm:text-[3.333vw] sm:px-[3.333vw] sm:py-[1.2vw] sm:rounded-[3.333vw]" href="#">Get</Link>
+         </div>
+         <div className="gap-x-[12px] p-[15px] flex flex-wrap gap-y-[8px] sm:gap-y-[2.222vw] sm:gap-x-[3.333vw]">
+           {shop.map(item => {
+             return <div className="relative w-[48.1%] h-[206px] flex flex-col shadow-custom-purple inner-shadow justify-end shadow-inner-image rounded-[16px] p-[12px] sm:rounded-[4.444vw] sm:p-[3.333vw] sm:w-[43.689vw] sm:h-[57.222vw]" key={item.id}>
+               <Image
+                 fill
+                 src={item.image.src}
+                 className="object-cover rounded-[16px] sm:rounded-[4.444vw]"
+                 alt={item.name}
+               />
+               <div className="relative z-[5]">
+                 <p className="text-[16px] tracking-[0.02em] font-bold sm:text-[4.444vw] leading-[1.2em]">{item.name}</p>
+                 <p className="font-medium text-[12px] sm:text-[3.333vw]">{item.description}</p>
+               </div>
+             </div>
+           })}
+         </div>
+       </div>
     </div>
   );
 }
