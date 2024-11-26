@@ -21,11 +21,11 @@ export default function Page() {
               Get the AiGo and snag your girl today!
             </p>
           </div>
-          <Link className="bg-button-gradient shadow-custom-purple font-bold text-[12px] text-[#fff] px-[12px] py-[4px] rounded-[12px] sm:text-[3.333vw] sm:px-[3.333vw] sm:py-[1.2vw] sm:rounded-[3.333vw]" href="@/app/(public)/page#">Get</Link>
+          <Link className="bg-button-gradient shadow-custom-purple font-bold text-[12px] text-[#fff] px-[12px] py-[4px] rounded-[12px] sm:text-[3.333vw] sm:px-[3.333vw] sm:py-[1.2vw] sm:rounded-[3.333vw]" href="https://apps.apple.com/ru/app/aigo-relationship-simulator/id1670062480">Get</Link>
         </div>
         <div className="gap-x-[12px] p-[15px] flex flex-wrap gap-y-[8px] sm:gap-y-[2.222vw] sm:gap-x-[3.333vw]">
           {shop.map(item => {
-            return <div className="relative w-[48.1%] h-[206px] flex flex-col shadow-custom-purple inner-shadow justify-end shadow-inner-image rounded-[16px] p-[12px] sm:rounded-[4.444vw] sm:p-[3.333vw] sm:w-[43.689vw] sm:h-[57.222vw]" key={item.id}>
+            return <Link href="https://apps.apple.com/ru/app/aigo-relationship-simulator/id1670062480" className="relative w-[48.1%] h-[206px] flex flex-col shadow-custom-purple inner-shadow justify-end shadow-inner-image rounded-[16px] p-[12px] sm:rounded-[4.444vw] sm:p-[3.333vw] sm:w-[43.689vw] sm:h-[57.222vw]" key={item.id}>
               <Image
                 fill
                 src={item.image.src}
@@ -36,7 +36,7 @@ export default function Page() {
                 <p className="text-[16px] tracking-[0.02em] font-bold sm:text-[4.444vw] leading-[1.2em]">{item.name}</p>
                 <p className="font-medium text-[12px] sm:text-[3.333vw]">{item.description}</p>
               </div>
-            </div>
+            </Link>
           })}
         </div>
       </div>
