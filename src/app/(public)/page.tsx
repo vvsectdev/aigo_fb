@@ -1,9 +1,9 @@
 import Image from "next/image";
-import MainImage from '@/../public/images/main.webp';
+import MainImage from '../../../public/images/main.webp';
 import Link from "next/link";
 import {shop} from "@/shared/consts/shop";
 
-export default function Home() {
+export default function Page() {
   return (
     <div className="font-bai-jamjuree text-[#fff] h-full">
       <div className="max-w-[360px] bg-[#121423] w-full mx-auto sm:max-w-[100vw]">
@@ -21,7 +21,7 @@ export default function Home() {
               Get the AiGo and snag your girl today!
             </p>
           </div>
-          <Link className="bg-button-gradient shadow-custom-purple font-bold text-[12px] text-[#fff] px-[12px] py-[4px] rounded-[12px] sm:text-[3.333vw] sm:px-[3.333vw] sm:py-[1.2vw] sm:rounded-[3.333vw]" href="#">Get</Link>
+          <Link className="bg-button-gradient shadow-custom-purple font-bold text-[12px] text-[#fff] px-[12px] py-[4px] rounded-[12px] sm:text-[3.333vw] sm:px-[3.333vw] sm:py-[1.2vw] sm:rounded-[3.333vw]" href="@/app/(public)/page#">Get</Link>
         </div>
         <div className="gap-x-[12px] p-[15px] flex flex-wrap gap-y-[8px] sm:gap-y-[2.222vw] sm:gap-x-[3.333vw]">
           {shop.map(item => {
