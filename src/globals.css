@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.inner-shadow:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.07) 45%, rgba(149, 89, 255, 0.567) 79.5%);
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+}
