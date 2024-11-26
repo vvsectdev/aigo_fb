@@ -1,7 +1,7 @@
 import Image from "next/image";
 import MainImage from '@/../public/images/main.webp';
-import {shop} from "@/app/shared/consts/shop";
 import Link from "next/link";
+import {shop} from "@/shared/consts/shop";
 
 export default function Home() {
   return (
