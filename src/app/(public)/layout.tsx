@@ -1,5 +1,6 @@
 import DefaultLayout from "@/widgets/Layout/DefaultLayout";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Chat with AI Girlfriend",
@@ -9,7 +10,9 @@ export const metadata: Metadata = {
 export default function Layout({children,}: { children: React.ReactNode }) {
   return (
     <DefaultLayout>
-      {children}
+      <Suspense>
+        {children}
+      </Suspense>
     </DefaultLayout>
   )
 }
