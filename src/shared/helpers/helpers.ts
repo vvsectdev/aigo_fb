@@ -1,5 +1,6 @@
 import ReactGA4 from "react-ga4";
-
+//G-T5H3KF4W7W - nikita
+//GTM-T57B7R4X - aigo
 export const InitializeGoogleAnalytics = () => {
   ReactGA4.initialize("GTM-T57B7R4X");
 };
