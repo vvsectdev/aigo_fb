@@ -9,6 +9,7 @@ import {
   TrackGoogleAnalyticsEventOnTap,
   TrackGoogleAnalyticsEventWithParams
 } from "@/shared/helpers/helpers";
+import ReactGA4 from "react-ga4";
 import { useSearchParams } from "next/navigation";
 
 export default function Page() {
@@ -25,6 +26,10 @@ export default function Page() {
     } else {
       TrackGoogleAnalyticsEventOnTap()
     }
+    ReactGA4.event({
+      category: 'pageView',
+      action: `onboarding_deeplink_generator`,
+    });
     window.location.href = link
   }
   useEffect(() => {
